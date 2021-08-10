@@ -6,6 +6,10 @@ matches_csv = './data/matches.csv'
 
 
 def get_total_runs_by_team():
+    
+    """
+    return: dictionary containing team name as keys and total runs scored as value
+    """
 
     # Dictionary To Store runs by team.
     total_runs_by_team = dict()
@@ -32,6 +36,10 @@ def get_total_runs_by_team():
 
 
 def get_player_runs_by_team(team):
+
+    """
+    return: A dictionary containing player name as key and runs scored as value.
+    """
 
     # Dictionary to Store players Runs by a given team.
     player_runs_by_team = dict()
@@ -62,3 +70,4 @@ def get_player_runs_by_team(team):
                 pass
 
     return player_runs_by_team
+
