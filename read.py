@@ -20,7 +20,7 @@ def read_data():
         for row in reader:
 
             playing_team = row[2]
-            total_run = row[-4]
+            total_run = int(row[-4])
             
             if playing_team in total_runs_by_team.keys():
                 total_runs_by_team[playing_team] += total_run
