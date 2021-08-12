@@ -1,4 +1,5 @@
 import csv
+from os import read
 
 # Data Files.
 deliveries_csv = './data/deliveries.csv'
@@ -14,7 +15,6 @@ def get_total_runs_by_team():
     # Dictionary To Store runs by team.
     total_runs_by_team = dict()
     with open(deliveries_csv) as file:
-
         reader = csv.reader(file)
 
         # First Row Needs to avoided.
@@ -71,3 +71,20 @@ def get_player_runs_by_team(team):
 
     return player_runs_by_team
 
+
+def foreign_umprire_analysis():
+    """
+    return: A dictionary that contains count of umpires by country
+    """
+
+    # # Dictionry that contains count of umpires by country
+    # umprie_by_country = dict()
+
+    # with open(matches_csv) as file:
+
+    #     reader = csv.reader(file)
+
+    #     # First Row needs to be removed
+
+    #     for row in reader:
+    pass
