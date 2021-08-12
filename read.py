@@ -88,3 +88,46 @@ def foreign_umprire_analysis():
 
     #     for row in reader:
     pass
+
+def played_by_team_by_season():
+
+    """
+    return: Two dictionary, matches count by team and season 
+    """
+    
+    # dictionary match count by team and season
+    match_count_by_team = dict()
+    match_count_by_season = dict()
+
+    with open(matches_csv) as file:
+
+        reader = csv.reader(file)
+
+        # First Row needs to be removed..
+        first_row = next(reader)
+
+        for row in reader:
+
+            season = row[1]   # get the season
+            team1 = row[4]    # get the team1
+            team2 = row[5]    # get the team2
+
+            #  See if season already exist in dictionary
+            if season in match_count_by_season.keys():
+                match_count_by_season[season] += 1   # Increase the count by 1
+            else:
+                match_count_by_season[season] = 1
+            
+            # See if team1  already exists in dictionary 
+            if team1 in match_count_by_team.keys():
+                match_count_by_team[team1] += 1      # Increase the count by 1
+            else:
+                match_count_by_team[team1] = 1
+            
+            # See if team2 already exists in dictionary
+            if team2 in match_count_by_team.keys():
+                match_count_by_team[team2] += 1      # Increase the count by 1
+            else:
+                match_count_by_team[team2] = 1
+
+    return match_count_by_team, match_count_by_season
