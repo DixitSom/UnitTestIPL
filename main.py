@@ -1,8 +1,22 @@
 import read
+import matplotlib.pyplot as plt
 
 # function to plot total runs scored by team.
-def plot_total_run_by_team():
-    pass
+def plot_total_run_by_team(data):
+
+    x = data.keys()       # x is array of teams
+    y = data.values()     # y is array of count of matches for respective team
+
+    # plotting the figure
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(x, y)
+    plt.xlabel('Teams')
+    plt.ylabel('Total runs')
+    plt.title('Total Runs By team')
+    plt.show()
+
+    # END..
 
 # function to plot total run scored by batsman for a team
 def plot_batsman_run_by_team():
@@ -22,6 +36,12 @@ def plot_matches_played_by_season():
 
 # Main function...
 def main():
+
+    # get data for total runs by team
+    data = read.get_total_runs_by_team()
+    print(data)
+    # plot bar chart
+    plot_total_run_by_team(data)
     pass
 
 # If this is the running file
