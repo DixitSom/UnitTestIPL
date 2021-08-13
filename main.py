@@ -41,7 +41,39 @@ def plot_foreign_umprire_analysis():
 
 # function to plot matches played by team
 def plot_matches_played_by_team_by_session(data):
-    pass
+
+    # change type of set to list and get all the seasons
+    seasons = list(data[1])
+
+    x = data[0].keys()    # x is array of teams
+    y = []                # y is 2d array of matches count for every team by year
+
+    # iterate through all the seasons
+    for season in seasons:
+        
+        # tempray array to store count for a team by season
+        temp = []
+        for team, info in data[0].items():
+            temp.append(data[0][team][season])
+
+        y.append(temp)
+
+    # plot first season
+    plt.bar(x, y[0], label=f"{seasons[0]}")
+    last = y[0]
+
+    for i in range(1, len(y)):
+        
+        plt.bar(x, y[i], bottom=last, label=f"{seasons[i]}")
+
+        # this is utilty variable needs to be passed in ploting function.
+        last = [last[j] + y[i][j] for j in range(len(last))]
+    
+    plt.xlabel('Teams')
+    plt.ylabel('Matches Played')
+    plt.title('Matches Played by team by season')
+    plt.legend()
+    plt.show()
 
 # Main function...
 def main():
