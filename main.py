@@ -40,8 +40,21 @@ def plot_foreign_umprire_analysis():
     pass
 
 # function to plot matches played by team
-def plot_matches_played_by_team():
-    pass
+def plot_matches_played_by_team(data):
+
+    x = data.keys()       # x is array of teams
+    y = data.values()     # y is array of count of matches played by team
+
+    # plotting the figure
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(x, y)
+    plt.xlabel('Teams')
+    plt.ylabel('Match Count')
+    plt.title('Total Matches played by teams')
+    plt.show()
+
+    # END..
 
 # function to plot matched played by season
 def plot_matches_played_by_season():
@@ -61,6 +74,12 @@ def main():
 
     # plot the chart
     plot_batsman_run_by_team(data, 'Royal Challengers Bangalore')
+
+    # get data for matches count by team and by session
+    data = read.played_by_team_by_season()
+
+    # plot bar chart by team
+    plot_matches_played_by_team(data[0])
 
 # If this is the running file
 if __name__ == '__main__':
