@@ -109,7 +109,7 @@ def foreign_umprire_analysis():
                 }
 
     # it will count umpires by origin country
-    for name, country in umpires.keys():
+    for name, country in umpires.items():
 
         # if country is in dictionary
         if country in umpires_by_country.keys():
