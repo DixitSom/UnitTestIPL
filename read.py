@@ -134,5 +134,3 @@ def played_by_team_by_season():
                 match_count_by_team_by_session[team2] = dict()
 
     return match_count_by_team_by_session
-
-print(played_by_team_by_season())

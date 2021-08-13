@@ -40,38 +40,8 @@ def plot_foreign_umprire_analysis():
     pass
 
 # function to plot matches played by team
-def plot_matches_played_by_team(data):
-
-    x = data.keys()       # x is array of teams
-    y = data.values()     # y is array of count of matches played by team
-
-    # plotting the figure
-
-    plt.figure(figsize=(10, 5))
-    plt.bar(x, y)
-    plt.xlabel('Teams')
-    plt.ylabel('Match Count')
-    plt.title('Total Matches played by teams')
-    plt.show()
-
-    # END..
-
-# function to plot matched played by season
-def plot_matches_played_by_season(data):
-
-    x = data.keys()       # x is array of seasons(years)
-    y = data.values()     # y is array of count of matches played in a season
-
-    # plotting the figure
-
-    plt.figure(figsize=(10, 5))
-    plt.bar(x, y)
-    plt.xlabel('Season')
-    plt.ylabel('Match Count')
-    plt.title('Total Matches played in a Season')
-    plt.show()
-
-    # END..
+def plot_matches_played_by_team_by_session(data):
+    pass
 
 # Main function...
 def main():
@@ -92,10 +62,7 @@ def main():
     data = read.played_by_team_by_season()
 
     # plot bar chart by team
-    plot_matches_played_by_team(data[0])
-
-    # plot bar chart by season
-    plot_matches_played_by_season(data[1])
+    plot_matches_played_by_team_by_session(data)
 
 
 # If this is the running file
