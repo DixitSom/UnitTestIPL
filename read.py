@@ -98,6 +98,9 @@ def played_by_team_by_season():
     # nested dictionary match count by team and season
     match_count_by_team_by_session = dict()
 
+    # it will store all the seasons available in our dataset
+    all_seasons = set()
+
     with open(matches_csv) as file:
 
         reader = csv.reader(file)
@@ -110,6 +113,8 @@ def played_by_team_by_season():
             season = row[1]   # get the season
             team1 = row[4]    # get the team1
             team2 = row[5]    # get the team2
+
+            all_seasons.add(season)
 
             #  see if team1 already in dictionary
             if team1 in match_count_by_team_by_session.keys():
@@ -133,4 +138,15 @@ def played_by_team_by_season():
             else:
                 match_count_by_team_by_session[team2] = dict()
 
-    return match_count_by_team_by_session
+
+    # It will store 0 value for all seasons that are not played by teams
+    # to help in plotting 
+
+    for key, value in match_count_by_team_by_session.items():
+        for season in all_seasons:
+
+            # if team did not played any match in season then store 0 for that season
+            if not season in value.keys():
+                match_count_by_team_by_session[key][season] = 0
+
+    return match_count_by_team_by_session, all_seasons
