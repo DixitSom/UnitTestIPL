@@ -19,8 +19,21 @@ def plot_total_run_by_team(data):
     # END..
 
 # function to plot total run scored by batsman for a team
-def plot_batsman_run_by_team():
-    pass
+def plot_batsman_run_by_team(data, team):
+
+    x = data.keys()       # x is array of players
+    y = data.values()     # y is array of count of runs for respective player
+
+    # plotting the figure
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(x, y)
+    plt.xlabel('Batsman')
+    plt.ylabel(f'Total runs for {team}')
+    plt.title(f'Runs scored by players for {team}')
+    plt.show()
+
+    # END..
 
 # function to plot count of foreign umprie by origin country
 def plot_foreign_umprire_analysis():
@@ -42,6 +55,12 @@ def main():
 
     # plot bar chart
     plot_total_run_by_team(data)
+
+    # get data for player runs for a team
+    data = read.get_player_runs_by_team('Royal Challengers Bangalore')
+
+    # plot the chart
+    plot_batsman_run_by_team(data, 'Royal Challengers Bangalore')
 
 # If this is the running file
 if __name__ == '__main__':
