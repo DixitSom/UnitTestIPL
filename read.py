@@ -76,18 +76,48 @@ def foreign_umprire_analysis():
     """
     return: A dictionary that contains count of umpires by country
     """
+    # it will store count of umpires by country
+    umpires_by_country = dict()
 
-    # # Dictionry that contains count of umpires by country
-    # umprie_by_country = dict()
+    # dictionary to store all umpries information.
+    umpires = {'Kumar Dharmasena':'Sri Lanka',
+                'Marais Erasmus':'South Africa',
+                'Simon Taufel':'Australia',
+                'Chris Gaffaney':'New Zealand',
+                'Asad Rauf':'Pakistan',
+                'Bruce Oxenford':'Australia',
+                'Rod Tucker':'Australia',
+                'Billy Doctrove':'West Indies',
+                'Rudi Koertzen':'South Africa',
+                'Billy Bowden':'New Zealand',
+                'Aleem Dar':'Pakistan',
+                'Nigel Llong':'England',
+                'Richard Illingworth':'England',
+                'Russell Tiffin':'Zimbabwe',
+                'Daryl Harper':'Australia',
+                'Paul Reiffel':'Australia',
+                'Brian Jerling':'South Africa',
+                'Johan Cloete':'South Africa',
+                'Ian Howell':'South Africa',
+                'Mark Benson':'England',
+                'Gary Baxter':'New Zealand',
+                'Steve Davis':'Australia',
+                'Simon Fry':'Australia',
+                'Ian Gould':'England',
+                'Tony Hill':'New Zealand',
+                'Tyron Wijewardene':'Sri Lanka'
+                }
 
-    # with open(matches_csv) as file:
+    # it will count umpires by origin country
+    for name, country in umpires.keys():
 
-    #     reader = csv.reader(file)
-
-    #     # First Row needs to be removed
-
-    #     for row in reader:
-    pass
+        # if country is in dictionary
+        if country in umpires_by_country.keys():
+            umpires_by_country[country] += 1
+        else:
+            umpires_by_country[country] = 1
+    
+    return umpires_by_country
 
 def played_by_team_by_season():
 
