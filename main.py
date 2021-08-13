@@ -11,9 +11,10 @@ def plot_total_run_by_team(data):
 
     plt.figure(figsize=(10, 5))
     plt.bar(x, y)
-    plt.xlabel('Teams', rotation=90)
+    plt.xlabel('Teams')
     plt.ylabel('Total runs')
     plt.title('Total Runs By team')
+    plt.xticks(rotation=90)
     plt.show()
 
     # END..
@@ -28,9 +29,10 @@ def plot_batsman_run_by_team(data, team):
 
     plt.figure(figsize=(10, 5))
     plt.bar(x, y)
-    plt.xlabel('Batsman', rotation=90)
+    plt.xlabel('Batsman')
     plt.ylabel(f'Total runs for {team}')
     plt.title(f'Runs scored by players for {team}')
+    plt.xticks(rotation=90)
     plt.show()
 
     # END..
@@ -45,9 +47,10 @@ def plot_foreign_umprire_analysis(data):
 
     plt.figure(figsize=(10, 5))
     plt.bar(x, y)
-    plt.xlabel('Country', rotation=90)
+    plt.xlabel('Country')
     plt.ylabel('Count')
     plt.title('Count of Umprires by Country')
+    plt.xticks(rotation=90)
     plt.show()
 
     # END..
@@ -82,9 +85,10 @@ def plot_matches_played_by_team_by_session(data):
         # this is utilty variable needs to be passed in ploting function.
         last = [last[j] + y[i][j] for j in range(len(last))]
     
-    plt.xlabel('Teams', rotation=90)
+    plt.xlabel('Teams')
     plt.ylabel('Matches Played')
     plt.title('Matches Played by team by season')
+    plt.xticks(rotation=90)
     plt.legend()
     plt.show()
 
