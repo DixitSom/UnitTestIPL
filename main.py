@@ -57,8 +57,21 @@ def plot_matches_played_by_team(data):
     # END..
 
 # function to plot matched played by season
-def plot_matches_played_by_season():
-    pass
+def plot_matches_played_by_season(data):
+
+    x = data.keys()       # x is array of seasons(years)
+    y = data.values()     # y is array of count of matches played in a season
+
+    # plotting the figure
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(x, y)
+    plt.xlabel('Season')
+    plt.ylabel('Match Count')
+    plt.title('Total Matches played in a Season')
+    plt.show()
+
+    # END..
 
 # Main function...
 def main():
@@ -80,6 +93,10 @@ def main():
 
     # plot bar chart by team
     plot_matches_played_by_team(data[0])
+
+    # plot bar chart by season
+    plot_matches_played_by_season(data[1])
+
 
 # If this is the running file
 if __name__ == '__main__':
