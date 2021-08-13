@@ -92,12 +92,11 @@ def foreign_umprire_analysis():
 def played_by_team_by_season():
 
     """
-    return: Two dictionary, matches count by team and season 
+    return: nested dictionary, matches count by team and season 
     """
     
-    # dictionary match count by team and season
-    match_count_by_team = dict()
-    match_count_by_season = dict()
+    # nested dictionary match count by team and season
+    match_count_by_team_by_session = dict()
 
     with open(matches_csv) as file:
 
@@ -112,22 +111,28 @@ def played_by_team_by_season():
             team1 = row[4]    # get the team1
             team2 = row[5]    # get the team2
 
-            #  See if season already exist in dictionary
-            if season in match_count_by_season.keys():
-                match_count_by_season[season] += 1   # Increase the count by 1
+            #  see if team1 already in dictionary
+            if team1 in match_count_by_team_by_session.keys():
+                
+                # see if season already in dictionary
+                if season in match_count_by_team_by_session[team1].keys():
+                    match_count_by_team_by_session[team1][season] += 1
+                else:
+                    match_count_by_team_by_session[team1][season] = 1
             else:
-                match_count_by_season[season] = 1
+                match_count_by_team_by_session[team1] = dict()
             
-            # See if team1  already exists in dictionary 
-            if team1 in match_count_by_team.keys():
-                match_count_by_team[team1] += 1      # Increase the count by 1
-            else:
-                match_count_by_team[team1] = 1
-            
-            # See if team2 already exists in dictionary
-            if team2 in match_count_by_team.keys():
-                match_count_by_team[team2] += 1      # Increase the count by 1
-            else:
-                match_count_by_team[team2] = 1
+            #  see if team2 already in dictionary
+            if team2 in match_count_by_team_by_session.keys():
 
-    return match_count_by_team, match_count_by_season
+                # see if season already in dictionary
+                if season in match_count_by_team_by_session[team2].keys():
+                    match_count_by_team_by_session[team2][season] += 1
+                else:
+                    match_count_by_team_by_session[team2][season] = 1
+            else:
+                match_count_by_team_by_session[team2] = dict()
+
+    return match_count_by_team_by_session
+
+print(played_by_team_by_season())
