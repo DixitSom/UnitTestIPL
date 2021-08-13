@@ -24,7 +24,7 @@ def get_total_runs_by_team():
         for row in reader:
 
             playing_team = row[2]     # get team name
-            total_run = row[-4]       # get total run on the ball
+            total_run = int(row[-4])       # get total run on the ball
             
             # IF playing team is in dictionary.
             if playing_team in total_runs_by_team.keys():

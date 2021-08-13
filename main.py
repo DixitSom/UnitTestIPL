@@ -39,10 +39,9 @@ def main():
 
     # get data for total runs by team
     data = read.get_total_runs_by_team()
-    print(data)
+
     # plot bar chart
     plot_total_run_by_team(data)
-    pass
 
 # If this is the running file
 if __name__ == '__main__':
