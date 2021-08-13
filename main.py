@@ -36,8 +36,21 @@ def plot_batsman_run_by_team(data, team):
     # END..
 
 # function to plot count of foreign umprie by origin country
-def plot_foreign_umprire_analysis():
-    pass
+def plot_foreign_umprire_analysis(data):
+
+    x = data.keys()       # x is array of countries
+    y = data.values()     # y is array of count of umpires by country
+
+    # plotting the figure
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(x, y)
+    plt.xlabel('Country')
+    plt.ylabel('Count')
+    plt.title('Count of Umprires by Country')
+    plt.show()
+
+    # END..
 
 # function to plot matches played by team
 def plot_matches_played_by_team_by_session(data):
@@ -74,6 +87,8 @@ def plot_matches_played_by_team_by_session(data):
     plt.title('Matches Played by team by season')
     plt.legend()
     plt.show()
+
+    # END..
 
 # Main function...
 def main():
