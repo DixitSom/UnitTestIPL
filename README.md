@@ -12,9 +12,9 @@ This is a python project to do data analysis on IPL data of all years. In this p
   
 ***
 ## Data
-For our project we have to comma saprated files.
-1. deliveries.csv
-2. matches.csv
+For our project we have two comma saprated files in folder named __data__.
+1. data/deliveries.csv
+2. data/matches.csv
 
 where *deliveries.csv* contains data for every ball of entire IPL history. it has 21 columns as following.
 ```
@@ -26,7 +26,7 @@ and *matches.csv* contains information about every match for entire IPL history.
 id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winner,win_by_runs,win_by_wickets,player_of_match,venue,umpire1,umpire2,umpire3
 ```
 
-You can download these files from this [link](https://www.kaggle.com/manasgarg/ipl/version/5).
+You can download these files from this [link](https://www.kaggle.com/manasgarg/ipl/version/5). Make sure after downloading put them in a folder named __data__.
 ***
 ## Requirements
 
