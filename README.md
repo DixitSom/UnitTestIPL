@@ -46,7 +46,7 @@ python-dateutil==2.8.2
 six==1.16.0
 ```
 
-Or you can hit *pip install -r requirement.txt*
+Or you can hit ```pip install -r requirement.txt```
 
 ***
 ## Setup and Run
