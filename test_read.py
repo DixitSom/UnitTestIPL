@@ -1,3 +1,8 @@
+"""
+Python Project Unit Testing for IPL project
+@author: Rohan Dixit
+"""
+
 import unittest
 
 import read
@@ -17,6 +22,15 @@ class TestIPL(unittest.TestCase):
         self.assertEqual(result['MS Dhoni'], 2986)
         self.assertEqual(result['SK Raina'], 3707)
         self.assertEqual(result['BB McCullum'], 841)
+
+    def test_foreign_umpire_analysis(self):
+        result = read.foreign_umprire_analysis()
+
+        self.assertEqual(result['Sri Lanka'], 2)
+        self.assertEqual(result['Australia'], 7)
+
+        with self.assertRaises(KeyError):
+            result['India']
 
 
 if __name__ == "__main__":
